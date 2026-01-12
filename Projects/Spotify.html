@@ -1,0 +1,233 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Spotify Clone
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+            font-family: 'Roboto', sans-serif;
+        }
+  </style>
+ </head>
+ <body class="bg-gray-900 text-white">
+  <header class="bg-gray-800 p-4 flex justify-between items-center">
+   <div class="flex items-center">
+    <img alt="Spotify logo, a green circle with three curved lines inside representing sound waves" class="h-10 w-10" height="50" src="https://storage.googleapis.com/a1aa/image/4Dcp86fvVLVrR6xbMf5UO2zZlXn4SLQMAgkUiIUXjK3SrQIUA.jpg" width="50"/>
+    <h1 class="ml-3 text-2xl font-bold">
+     Spotify
+    </h1>
+   </div>
+   <nav class="space-x-4">
+    <a class="hover:text-green-500" href="#">
+     Home
+    </a>
+    <a class="hover:text-green-500" href="#">
+     Search
+    </a>
+    <a class="hover:text-green-500" href="#">
+     Your Library
+    </a>
+   </nav>
+  </header>
+  <main class="p-4">
+   <section class="mb-8">
+    <h2 class="text-2xl font-bold mb-4">
+     Recently Played
+    </h2>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+     <div class="bg-gray-800 p-4 rounded-lg">
+      <img alt="Album cover with abstract art in vibrant colors" class="rounded-lg mb-2" height="200" src="https://storage.googleapis.com/a1aa/image/3HtM3BZ7zpJXJB1defPtav7e7O7O2mEmW5x1FNomyuGZWhQoA.jpg" width="200"/>
+      <h3 class="text-lg font-semibold">
+       Album Title 1
+      </h3>
+      <p class="text-gray-400">
+       Artist Name
+      </p>
+     </div>
+     <div class="bg-gray-800 p-4 rounded-lg">
+      <img alt="Album cover with a black and white photo of the artist" class="rounded-lg mb-2" height="200" src="https://storage.googleapis.com/a1aa/image/9aSNared6TyYWqY4TII7yIfeAUB8NuFeE6EJxxN1JtKpsChQB.jpg" width="200"/>
+      <h3 class="text-lg font-semibold">
+       Album Title 2
+      </h3>
+      <p class="text-gray-400">
+       Artist Name
+      </p>
+     </div>
+     <div class="bg-gray-800 p-4 rounded-lg">
+      <img alt="Album cover with a colorful geometric pattern" class="rounded-lg mb-2" height="200" src="https://storage.googleapis.com/a1aa/image/dCe1zu8xswWnRy286n862skJfvKa939duUxc1fHxKeMIsChQB.jpg" width="200"/>
+      <h3 class="text-lg font-semibold">
+       Album Title 3
+      </h3>
+      <p class="text-gray-400">
+       Artist Name
+      </p>
+     </div>
+     <div class="bg-gray-800 p-4 rounded-lg">
+      <img alt="Album cover with a minimalist design featuring a single object" class="rounded-lg mb-2" height="200" src="https://storage.googleapis.com/a1aa/image/1yzwYjMmfkXHZSUf59ejfzdV6xlKp6zZiUqNqare3mrvZFChC.jpg" width="200"/>
+      <h3 class="text-lg font-semibold">
+       Album Title 4
+      </h3>
+      <p class="text-gray-400">
+       Artist Name
+      </p>
+     </div>
+     <div class="bg-gray-800 p-4 rounded-lg">
+      <img alt="Album cover with a vintage photo of a band" class="rounded-lg mb-2" height="200" src="https://storage.googleapis.com/a1aa/image/LCO8HU0NWZbXAhzB37iuOmNDSx7CwxRc3I5yDFF0iWRxKECF.jpg" width="200"/>
+      <h3 class="text-lg font-semibold">
+       Album Title 5
+      </h3>
+      <p class="text-gray-400">
+       Artist Name
+      </p>
+     </div>
+    </div>
+   </section>
+   <section class="mb-8">
+    <h2 class="text-2xl font-bold mb-4">
+     Made for You
+    </h2>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+     <div class="bg-gray-800 p-4 rounded-lg">
+      <img alt="Playlist cover with a collage of various album covers" class="rounded-lg mb-2" height="200" src="https://storage.googleapis.com/a1aa/image/PVtsOCYZva6QDFJ4HTqMDcRh5NJIy4UfEOeJ3xUmXV5OrQIUA.jpg" width="200"/>
+      <h3 class="text-lg font-semibold">
+       Playlist Title 1
+      </h3>
+      <p class="text-gray-400">
+       Description
+      </p>
+     </div>
+     <div class="bg-gray-800 p-4 rounded-lg">
+      <img alt="Playlist cover with a colorful abstract design" class="rounded-lg mb-2" height="200" src="https://storage.googleapis.com/a1aa/image/KJbmLZiAev1lISvpOR5YzPQbupFU8toBUFijB2ZGxDqqVIEKA.jpg" width="200"/>
+      <h3 class="text-lg font-semibold">
+       Playlist Title 2
+      </h3>
+      <p class="text-gray-400">
+       Description
+      </p>
+     </div>
+     <div class="bg-gray-800 p-4 rounded-lg">
+      <img alt="Playlist cover with a photo of a sunset over mountains" class="rounded-lg mb-2" height="200" src="https://storage.googleapis.com/a1aa/image/kewskpJzXZSQNaKfGYWfyjKiTLASFKnrlX2S4eqQSgmHsChQB.jpg" width="200"/>
+      <h3 class="text-lg font-semibold">
+       Playlist Title 3
+      </h3>
+      <p class="text-gray-400">
+       Description
+      </p>
+     </div>
+     <div class="bg-gray-800 p-4 rounded-lg">
+      <img alt="Playlist cover with a retro design featuring neon colors" class="rounded-lg mb-2" height="200" src="https://storage.googleapis.com/a1aa/image/4LBNcWnwrUYaEtklqv5VCsYzKIZ6unaE2sIKS0zUTv61KECF.jpg" width="200"/>
+      <h3 class="text-lg font-semibold">
+       Playlist Title 4
+      </h3>
+      <p class="text-gray-400">
+       Description
+      </p>
+     </div>
+     <div class="bg-gray-800 p-4 rounded-lg">
+      <img alt="Playlist cover with a black and white photo of a cityscape" class="rounded-lg mb-2" height="200" src="https://storage.googleapis.com/a1aa/image/Qy3HVf2bofm3iUffxcQ4IwXcd29dLApfSvKIcYmpmH8naFChC.jpg" width="200"/>
+      <h3 class="text-lg font-semibold">
+       Playlist Title 5
+      </h3>
+      <p class="text-gray-400">
+       Description
+      </p>
+     </div>
+    </div>
+   </section>
+   <section>
+    <h2 class="text-2xl font-bold mb-4">
+     Popular Albums
+    </h2>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+     <div class="bg-gray-800 p-4 rounded-lg">
+      <img alt="Album cover with a close-up photo of the artist" class="rounded-lg mb-2" height="200" src="https://storage.googleapis.com/a1aa/image/TYKFFT2hsNpSCFbK5DSy5MKi2f6rZexqUvQ1ieeg3JXcsChQB.jpg" width="200"/>
+      <h3 class="text-lg font-semibold">
+       Popular Album 1
+      </h3>
+      <p class="text-gray-400">
+       Artist Name
+      </p>
+     </div>
+     <div class="bg-gray-800 p-4 rounded-lg">
+      <img alt="Album cover with a colorful abstract painting" class="rounded-lg mb-2" height="200" src="https://storage.googleapis.com/a1aa/image/d8XrfK98hxVqGyI8L2Fms5IVl1NqXPbt8AFNEDQM3mcoVIEKA.jpg" width="200"/>
+      <h3 class="text-lg font-semibold">
+       Popular Album 2
+      </h3>
+      <p class="text-gray-400">
+       Artist Name
+      </p>
+     </div>
+     <div class="bg-gray-800 p-4 rounded-lg">
+      <img alt="Album cover with a photo of a live concert" class="rounded-lg mb-2" height="200" src="https://storage.googleapis.com/a1aa/image/9aeTvw5lOM1zV6rFtadoDn2WscQWbdNxpzyHRcfPPoeAWhQoA.jpg" width="200"/>
+      <h3 class="text-lg font-semibold">
+       Popular Album 3
+      </h3>
+      <p class="text-gray-400">
+       Artist Name
+      </p>
+     </div>
+     <div class="bg-gray-800 p-4 rounded-lg">
+      <img alt="Album cover with a minimalist design featuring a single object" class="rounded-lg mb-2" height="200" src="https://storage.googleapis.com/a1aa/image/1yzwYjMmfkXHZSUf59ejfzdV6xlKp6zZiUqNqare3mrvZFChC.jpg" width="200"/>
+      <h3 class="text-lg font-semibold">
+       Popular Album 4
+      </h3>
+      <p class="text-gray-400">
+       Artist Name
+      </p>
+     </div>
+     <div class="bg-gray-800 p-4 rounded-lg">
+      <img alt="Album cover with a vintage photo of a band" class="rounded-lg mb-2" height="200" src="https://storage.googleapis.com/a1aa/image/LCO8HU0NWZbXAhzB37iuOmNDSx7CwxRc3I5yDFF0iWRxKECF.jpg" width="200"/>
+      <h3 class="text-lg font-semibold">
+       Popular Album 5
+      </h3>
+      <p class="text-gray-400">
+       Artist Name
+      </p>
+     </div>
+    </div>
+   </section>
+  </main>
+  <footer class="bg-gray-800 p-4 mt-8">
+   <div class="flex justify-between items-center">
+    <div class="flex items-center space-x-4">
+     <img alt="Album cover of the currently playing song" class="h-12 w-12" height="50" src="https://storage.googleapis.com/a1aa/image/hnikefJ5dkn7bUgPBEYCaHwJLeBWhobpkBCw6ZFXZnbJWhQoA.jpg" width="50"/>
+     <div>
+      <h3 class="text-lg font-semibold">
+       Song Title
+      </h3>
+      <p class="text-gray-400">
+       Artist Name
+      </p>
+     </div>
+    </div>
+    <div class="flex items-center space-x-4">
+     <button class="text-gray-400 hover:text-white">
+      <i class="fas fa-step-backward">
+      </i>
+     </button>
+     <button class="text-gray-400 hover:text-white">
+      <i class="fas fa-play">
+      </i>
+     </button>
+     <button class="text-gray-400 hover:text-white">
+      <i class="fas fa-step-forward">
+      </i>
+     </button>
+    </div>
+    <div class="flex items-center space-x-4">
+     <button class="text-gray-400 hover:text-white">
+      <i class="fas fa-volume-up">
+      </i>
+     </button>
+     <input class="w-24" type="range"/>
+    </div>
+   </div>
+  </footer>
+ </body>
+</html>

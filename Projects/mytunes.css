@@ -1,0 +1,398 @@
+@import url("https://fonts.googleapis.com/css2?family=Abel&family=Bubblegum+Sans&family=Cedarville+Cursive&family=Josefin+Sans&family=Jost:wght@500&family=Lora:wght@500&family=Pacifico&family=Playfair+Display:wght@500&family=Poppins:wght@300&family=Raleway&family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,400&family=Rubik&family=Seaweed+Script&family=Signika+Negative&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  color: white;
+  font-family: "Abel", sans-serif;
+  font-family: "Bubblegum Sans", sans-serif;
+  font-family: "Cedarville Cursive", cursive;
+  font-family: "Josefin Sans", sans-serif;
+  font-family: "Jost", sans-serif;
+  font-family: "Lora", serif;
+  font-family: "Pacifico", cursive;
+  font-family: "Playfair Display", serif;
+  font-family: "Poppins", sans-serif;
+  font-family: "Raleway", sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-family: "Rubik", sans-serif;
+  font-family: "Seaweed Script", cursive;
+  font-family: "Signika Negative", sans-serif;
+  scroll-behavior: smooth;
+}
+.container {
+  width: 100vw;
+  height: 100%;
+}
+.content {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
+    url("../Image/turntable-1109588_1280.jpg");
+  min-height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+}
+/* navigation */
+.navbar {
+  /* border: solid green; */
+  width: 100%;
+  /* position: fixed; */
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  min-height: 100px;
+  gap: 1.2rem;
+  background:rgba(0, 0, 0, 0.699);
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.623);
+}
+.content1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: solid red; */
+}
+.content1 h2 {
+  letter-spacing: 0.2em;
+  font-size: 2.5em;
+}
+.content2 {
+  /* border: solid blue; */
+  display: flex;
+}
+.list {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 1em;
+  place-items: center;
+  /* border: solid red; */
+}
+.list li {
+  list-style: none;
+  /* border: solid green; */
+  padding: 2px 5px;
+  transition: color 0.5s 0s ease;
+}
+.list li a {
+  text-decoration: none;
+  font-size: 1.2em;
+  font-family: "Josefin Sans", sans-serif;
+  color: white;
+}
+.list li:hover{
+  text-decoration: underline 2px;
+}
+/* Overview */
+#overview{
+  /* position: absolute; */
+  min-height:100vh;
+  min-width: 100vw;
+  gap: 2rem;
+  /* border: solid red; */
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding:0.5rem 1rem;
+}
+.point1 h1{
+  font-family: "Roboto", sans-serif;
+  font-size:7rem;
+}
+.point2 h3{
+  font-family: "Roboto", sans-serif;
+  font-size:2.2rem;
+}
+.point3 p{
+  font-family: "Roboto", sans-serif;
+  font-size:1.2rem;
+  text-align: center;
+}
+/* Music */
+#music{
+  display: flex;
+  padding: 2rem;
+  /* border: solid yellow; */
+  justify-content: center;
+  gap: 3rem;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(7, 7, 66, 0.911);
+}
+.icon{
+  /* border: solid green; */
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(10px,55px));
+  justify-content: center;
+  width: 100%;
+  font-size: 2rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+}
+.music2{
+  font-size: 1.2rem;
+}
+.music3 button{
+  padding:0.5rem 1.1rem;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+}
+.music3 button:hover{
+  opacity: 0.8;
+  cursor: pointer;
+}
+.music4{
+  font-size: 1.2rem;
+  font-family: "Jost", sans-serif;
+}
+/* Mobile And Tablet */
+.mobile{
+  /* border: solid green; */
+  padding: 2rem;
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+}
+.box1{
+  /* position:absolute;   */
+  border:  solid grey 5px;
+  box-shadow: 5px 5px 15px black;
+  width:50%;
+  height: min-content;
+  padding:0.8rem;
+  background-color: rgba(0, 0, 0, 0.945);
+  border-radius:25px;
+  transition: all 0.5s 0s ease-out;
+}
+.box1:hover{
+  transform: translateX(25px);
+}
+.box1 img{
+  border-radius: 20px;
+  width:100%;
+}
+.box2{
+  position: absolute;
+  right:15%;
+  border: solid grey 5px;
+  box-shadow: 5px 2px 10px black;
+  padding:1rem 2rem;
+  width:20%;
+  background-color: rgba(0, 0, 0, 0.842);
+  border-radius: 25px;
+  transition: all 0.5s 0s ease-out;
+}
+.box2:hover{
+  transform: translateX(-30px);
+}
+.box2 img{
+  width: 100%;
+  border-radius: 20px;
+}
+/* Laptop */
+.laptop{
+  padding:3rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap:2.5rem;
+  align-items: center;
+  color: black;
+}
+.box3 h3{
+  font-family: "Roboto", sans-serif;
+  font-size:x-large;
+}
+.box4 article{
+  font-family: "Abel", sans-serif;
+  font-size:1.3rem;
+  text-align: center;
+}
+.box5 button{
+  padding: 0.5rem 1.2rem;
+  background-color: rgba(11, 11, 104, 0.911);
+  color: white;
+}
+.box5 button:hover{
+  cursor: pointer;
+  opacity: 0.9;
+}
+.box6{
+  /* border: solid red; */
+  width:60%;
+}
+.box6 img{
+  width:100%;
+}
+/* video */
+#video{
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh; /* You can adjust the height as needed */
+  /* color: white; */
+}
+#video video{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width:100%;
+  height:100%;
+  object-fit: cover;
+}
+.contentvideo{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 3.5rem;
+  padding: 3.5rem 1.2rem;
+  background-color: rgba(0, 0, 0, 0.39);
+  height: 100%;
+  position: relative;
+  z-index: 1; /* Place the content above the video */
+  color: white;
+  padding: 20px;
+}
+.box7 h3{
+  font-size: 1.7rem;
+  font-family: "Rubik", sans-serif;
+
+}
+.box8 article{
+  font-size: 1.1rem;
+  text-align: center;
+}
+/* Gift Card */
+#giftcard{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px,600px));
+  /* border:solid green; */
+  justify-content: center;
+  gap: 5.2rem;
+  padding:7.5rem 5.2rem;
+  align-items: center;
+  color: black;
+}
+.box9{
+  width:100%;
+  /* border: solid red; */
+}
+.box9 img{
+  width: 100%;
+  
+}
+.box10 article{
+  font-size:rem;
+}
+.box10{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap:1.2rem;
+}
+.box10 button{
+  padding:0.5rem 1.5rem;
+  background-color: rgba(255, 0, 0, 0.932);
+  color: white;
+  font-weight: bold;
+}
+.box10 button:hover{
+  cursor: pointer;
+  opacity: 0.8;
+}
+/* Footer */
+.footercontent{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(100px,400px));
+  gap: 1.5rem;
+  justify-content: center;
+  padding:3.5rem 2rem;
+  background-color: rgba(11, 11, 58, 0.87);
+}
+.product{
+  /* border: solid blue; */
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 0rem;
+  flex-wrap: wrap;
+  gap:0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+.product h2{
+  font-family: "Roboto", sans-serif;
+  font-size: 1.1rem;
+}
+.product p{
+  font-family: "Abel", sans-serif;
+  font-size: 1.1rem;
+}
+.product hr{
+  width: 100%;
+}
+/* Copyright */
+.copyright{
+  background-color: blue;
+  padding: 1.5rem 1rem;
+  text-align: center;
+}
+.copyright article{
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  font-size:1.2rem;
+  font-family: "Jost", sans-serif;
+}
+/* Media Query */
+@media(max-width:450px){
+  .list{
+    grid-template-columns: repeat(2,1fr);
+  }
+  .point1 h1{
+    font-size:4.5rem;
+  }
+  .point2 h3{
+    font-size: 2rem;
+  }
+  .box1{
+    padding:0.5rem;
+    position: relative;
+    right:5%;
+    width: 100%;
+  }
+  .box1 img{
+    width: 100%;
+  }
+  .box2{
+    padding: 0.8rem 0.5rem;
+    width:40%;
+    height:25%;
+    right: 5%;
+  }
+  .box2 img{
+    width: 100%;
+    height: 100%;
+  }
+  .box6{
+    width: 100%;
+  }
+  .box6 img{
+    width: 100%;
+  }
+  .box9{
+    width: 95%;
+  }
+  .box10 article{
+    font-size:0.8rem;
+    text-align: center;
+  }
+}

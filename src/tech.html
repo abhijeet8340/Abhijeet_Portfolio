@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Education Hub</title>
+    <link rel="stylesheet" href="output.css" />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+  </head>
+  <body class="font-sans bg-gray-900 text-white">
+    <!-- Navigation -->
+    <nav class="flex items-center justify-between p-4 z-20 w-full fixed top-0 bg-red-900 bg-opacity-90 shadow-md">
+      <!-- Logo -->
+      <div class="flex items-center">
+        <a href="index.html">
+          <img
+            src="  images/images-removebg-preview.png"
+            alt="Logo"
+            class="w-24 h-auto"
+          />
+        </a>
+      </div>
+  
+      <!-- Hamburger Icon -->
+      <div class="md:hidden">
+        <button id="menu-toggle">
+          <img
+            class="w-6 h-6"
+            src="  images/hamburger.png"
+            alt="menu"
+          />
+        </button>
+      </div>
+  
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex space-x-4 font-semibold items-center">
+        <a href=" index.html" class="text-blue-400">Home</a>
+        <a href="  courses.html" class="hover:text-blue-400">Courses</a>
+        <a href="  features.html" class="hover:text-blue-400">Features</a>
+        <a href="  about.html" class="hover:text-blue-400">About</a>
+        <a href="  signup.html" class="bg-blue-500 px-4 py-2 rounded hover:bg-blue-700 text-white">Sign Up</a>
+        <a href="  login.html" class="bg-blue-500 px-4 py-2 rounded hover:bg-blue-700 text-white">Login</a>
+      </div>
+    </nav>
+  
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden flex-col space-y-2 px-4 pt-20 pb-4 bg-white fixed w-full top-0 left-0 z-10 shadow-md md:hidden">
+      <a href=" index.html" class="text-blue-400">Home</a>
+      <a href="  courses.html" class="hover:text-blue-400">Courses</a>
+      <a href="  features.html" class="hover:text-blue-400">Features</a>
+      <a href="  about.html" class="hover:text-blue-400">About</a>
+      <a href="  signup.html" class="bg-blue-500 px-4 py-2 rounded hover:bg-blue-700 text-white w-fit">Sign Up</a>
+      <a href="  login.html" class="bg-blue-500 px-4 py-2 rounded hover:bg-blue-700 text-white w-fit">Login</a>
+    </div>
+  
+    <!-- Hero Section -->
+    <section
+      class="relative h-screen bg-cover bg-center bg-no-repeat"
+      style="
+        background-image: url('  images/ruijia-wang-BS9w1QCkJys-unsplash.jpg');
+      "
+    >
+      <div class="absolute inset-0 bg-black opacity-60"></div>
+      <div
+        class="relative z-10 flex flex-col items-center justify-center h-full px-6 text-center"
+      >
+        <h1 class="text-3xl md:text-5xl font-bold mb-4">
+          Welcome to Education Hub
+        </h1>
+        <p class="text-xl md:text-3xl text-blue-200 font-semibold mb-6">
+          Transform Your Future Through Quality Education
+        </p>
+        <p class="text-md md:text-xl text-gray-200 max-w-2xl mb-8">
+          Access world-class courses, expert instructors, and a supportive
+          learning community. Start your journey towards success today!
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex gap-4 mb-12">
+          <a
+            href="  startlearning.html"
+            class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg transition duration-300"
+          >
+            Start Learning
+          </a>
+          <a
+            href="  start.html"
+            class="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white px-8 py-3 rounded-lg transition duration-300"
+          >
+            Browse Courses
+          </a>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+          <div class="text-center">
+            <h3 class="text-4xl font-bold text-blue-400">50+</h3>
+            <p class="text-gray-300">Expert Instructors</p>
+          </div>
+          <div class="text-center">
+            <h3 class="text-4xl font-bold text-blue-400">100+</h3>
+            <p class="text-gray-300">Online Courses</p>
+          </div>
+          <div class="text-center">
+            <h3 class="text-4xl font-bold text-blue-400">10k+</h3>
+            <p class="text-gray-300">Happy Students</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Educational Facilities -->
+    <section class="py-16 px-4 bg-gray-800">
+      <h2 class="text-3xl font-bold text-center mb-12">
+        Our Educational Facilities
+      </h2>
+      <div class="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div class="bg-gray-900 rounded-lg p-6 shadow-lg">
+          <div class="text-4xl mb-4">🖥️</div>
+          <h3 class="text-xl font-bold mb-4">Virtual Classrooms</h3>
+          <ul class="space-y-2 text-gray-400">
+            <li>• Live Interactive Sessions</li>
+            <li>• Real-time Doubt Clearing</li>
+            <li>• Screen Sharing Capabilities</li>
+            <li>• Recorded Sessions Access</li>
+          </ul>
+        </div>
+
+        <div class="bg-gray-900 rounded-lg p-6 shadow-lg">
+          <div class="text-4xl mb-4">📚</div>
+          <h3 class="text-xl font-bold mb-4">Learning Resources</h3>
+          <ul class="space-y-2 text-gray-400">
+            <li>• Digital Library Access</li>
+            <li>• Downloadable Materials</li>
+            <li>• Practice Worksheets</li>
+            <li>• Study Guides</li>
+          </ul>
+        </div>
+
+        <div class="bg-gray-900 rounded-lg p-6 shadow-lg">
+          <div class="text-4xl mb-4">🔬</div>
+          <h3 class="text-xl font-bold mb-4">Practical Labs</h3>
+          <ul class="space-y-2 text-gray-400">
+            <li>• Virtual Lab Environment</li>
+            <li>• Industry Tools Access</li>
+            <li>• Project Workspaces</li>
+            <li>• Sandbox Testing</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Learning Functions -->
+    <section class="py-16 px-4 bg-gray-900">
+      <h2 class="text-3xl font-bold text-center mb-12">
+        Learning Functions & Support
+      </h2>
+      <div class="grid md:grid-cols-2 gap-8 max-w-7xl mx-auto">
+        <div class="bg-gray-800 rounded-lg p-8">
+          <h3 class="text-2xl font-bold mb-6">Student Support</h3>
+          <div class="grid grid-cols-2 gap-6">
+            <div>
+              <h4 class="text-lg font-semibold mb-3 text-blue-400">
+                Academic Support
+              </h4>
+              <ul class="space-y-2 text-gray-400">
+                <li>• 1-on-1 Mentoring</li>
+                <li>• Study Groups</li>
+                <li>• Assignment Help</li>
+                <li>• Progress Tracking</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="text-lg font-semibold mb-3 text-blue-400">
+                Technical Support
+              </h4>
+              <ul class="space-y-2 text-gray-400">
+                <li>• 24/7 Help Desk</li>
+                <li>• Setup Assistance</li>
+                <li>• Tool Guidance</li>
+                <li>• Resource Access</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-800 rounded-lg p-8">
+          <h3 class="text-2xl font-bold mb-6">Career Services</h3>
+          <div class="grid grid-cols-2 gap-6">
+            <div>
+              <h4 class="text-lg font-semibold mb-3 text-blue-400">
+                Career Guidance
+              </h4>
+              <ul class="space-y-2 text-gray-400">
+                <li>• Resume Building</li>
+                <li>• Interview Prep</li>
+                <li>• Portfolio Review</li>
+                <li>• Career Planning</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="text-lg font-semibold mb-3 text-blue-400">
+                Industry Connect
+              </h4>
+              <ul class="space-y-2 text-gray-400">
+                <li>• Job Placement</li>
+                <li>• Industry Events</li>
+                <li>• Networking</li>
+                <li>• Alumni Connect</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Learning Tools -->
+    <section class="py-16 px-4 bg-gray-800">
+      <h2 class="text-3xl font-bold text-center mb-12">
+        Learning Tools & Technologies
+      </h2>
+      <div class="grid md:grid-cols-4 gap-6 max-w-7xl mx-auto">
+        <div class="bg-gray-900 p-6 rounded-lg text-center">
+          <div class="text-4xl mb-4">⚡</div>
+          <h3 class="text-xl font-bold mb-2">Fast Learning</h3>
+          <p class="text-gray-400">
+            Accelerated learning paths with focused content delivery
+          </p>
+        </div>
+
+        <div class="bg-gray-900 p-6 rounded-lg text-center">
+          <div class="text-4xl mb-4">🎯</div>
+          <h3 class="text-xl font-bold mb-2">Targeted Practice</h3>
+          <p class="text-gray-400">
+            Customized exercises based on your learning needs
+          </p>
+        </div>
+
+        <div class="bg-gray-900 p-6 rounded-lg text-center">
+          <div class="text-4xl mb-4">📊</div>
+          <h3 class="text-xl font-bold mb-2">Progress Analytics</h3>
+          <p class="text-gray-400">
+            Detailed insights into your learning journey
+          </p>
+        </div>
+
+        <div class="bg-gray-900 p-6 rounded-lg text-center">
+          <div class="text-4xl mb-4">🤝</div>
+          <h3 class="text-xl font-bold mb-2">Peer Learning</h3>
+          <p class="text-gray-400">
+            Collaborative learning with fellow students
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Courses -->
+    <section id="courses" class="py-16 px-4 bg-gray-800">
+      <h2 class="text-3xl font-bold text-center mb-12">Featured Courses</h2>
+      <div class="grid md:grid-cols-2 2xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
+        <div
+          class="bg-white rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition duration-300"
+        >
+          <img
+            src="  images/lnct.jpg"
+            alt="Course"
+            class="w-full h-48 object-cover"
+          />
+          <div class="p-6 text-gray-900">
+            <h5 class="text-xl font-bold mb-2">Complete Java Development</h5>
+            <p class="text-gray-500 mb-4">
+              Master Java programming from basics to advanced concepts. Learn
+              OOP, collections, multithreading, and more.
+            </p>
+            <div class="flex justify-between items-center">
+              <span class="text-blue-600 font-bold">$49.99</span>
+              <a
+                href="  signup.html"
+                class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300"
+              >
+                Enroll Now
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition duration-300"
+        >
+          <img
+            src="  images/lnct.jpg"
+            alt="Course"
+            class="w-full h-48 object-cover"
+          />
+          <div class="p-6 text-gray-900">
+            <h5 class="text-xl font-bold mb-2">Full Stack Web Development</h5>
+            <p class="text-gray-500 mb-4">
+              Become a full-stack developer with modern technologies. Learn
+              HTML, CSS, JavaScript, React, Node.js, and more.
+            </p>
+            <div class="flex justify-between items-center">
+              <span class="text-blue-600 font-bold">$79.99</span>
+              <a
+                href="  signup.html"
+                class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300"
+              >
+                Enroll Now
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition duration-300"
+        >
+          <img
+            src="  images/lnct.jpg"
+            alt="Course"
+            class="w-full h-48 object-cover"
+          />
+          <div class="p-6 text-gray-900">
+            <h5 class="text-xl font-bold mb-2">Spring Boot Mastery</h5>
+            <p class="text-gray-500 mb-4">
+              Build enterprise-grade applications with Spring Boot. Learn
+              microservices, security, and best practices.
+            </p>
+            <div class="flex justify-between items-center">
+              <span class="text-blue-600 font-bold">$69.99</span>
+              <a
+                href="  signup.html"
+                class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300"
+              >
+                Enroll Now
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition duration-300"
+        >
+          <img
+            src="  images/lnct.jpg"
+            alt="Course"
+            class="w-full h-48 object-cover"
+          />
+          <div class="p-6 text-gray-900">
+            <h5 class="text-xl font-bold mb-2">Mobile App Development</h5>
+            <p class="text-gray-500 mb-4">
+              Create cross-platform mobile apps using React Native. Build
+              real-world projects and deploy to app stores.
+            </p>
+            <div class="flex justify-between items-center">
+              <span class="text-blue-600 font-bold">$59.99</span>
+              <a
+                href="  signup.html"
+                class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300"
+              >
+                Enroll Now
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 px-4 bg-gray-900">
+      <h2 class="text-3xl font-bold text-center mb-12">Why Choose Us</h2>
+      <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div class="text-center p-6">
+          <div class="text-4xl mb-4">🎓</div>
+          <h3 class="text-xl font-bold mb-4">Expert Instructors</h3>
+          <p class="text-gray-400">
+            Learn from industry professionals with years of real-world
+            experience.
+          </p>
+        </div>
+        <div class="text-center p-6">
+          <div class="text-4xl mb-4">💻</div>
+          <h3 class="text-xl font-bold mb-4">Hands-on Projects</h3>
+          <p class="text-gray-400">
+            Build real-world projects to strengthen your portfolio.
+          </p>
+        </div>
+        <div class="text-center p-6">
+          <div class="text-4xl mb-4">🌟</div>
+          <h3 class="text-xl font-bold mb-4">Career Support</h3>
+          <p class="text-gray-400">
+            Get guidance on resume building and job placement assistance.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pt-24 px-4 bg-gray-900">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+          <h1 class="text-4xl font-bold mb-4">Choose Your Learning Plan</h1>
+          <p class="text-xl text-gray-400">
+            Flexible plans designed to meet your learning goals
+          </p>
+        </div>
+
+        <!-- Pricing Toggle -->
+        <div class="flex justify-center items-center mb-12">
+          <span class="text-lg mr-4">Monthly</span>
+          <button
+            class="relative inline-flex items-center h-8 rounded-full w-14 bg-blue-600"
+          >
+            <span
+              class="absolute h-6 w-6 left-1 rounded-full bg-white transition-transform duration-200 transform translate-x-6"
+            ></span>
+          </button>
+          <span class="text-lg ml-4"
+            >Annually <span class="text-green-400">(Save 20%)</span></span
+          >
+        </div>
+
+        <!-- Pricing Cards -->
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Basic Plan -->
+          <div class="bg-gray-800 rounded-lg overflow-hidden">
+            <div class="p-8">
+              <h3 class="text-2xl font-bold mb-4">Basic Learner</h3>
+              <div class="mb-6">
+                <span class="text-4xl font-bold">$29</span>
+                <span class="text-gray-400">/month</span>
+              </div>
+              <ul class="space-y-4 mb-8">
+                <li class="flex items-center">
+                  <span class="text-green-400 mr-2">✓</span>
+                  Access to 50+ Basic Courses
+                </li>
+                <li class="flex items-center">
+                  <span class="text-green-400 mr-2">✓</span>
+                  Basic Project Templates
+                </li>
+                <li class="flex items-center">
+                  <span class="text-green-400 mr-2">✓</span>
+                  Community Forum Access
+                </li>
+                <li class="flex items-center">
+                  <span class="text-green-400 mr-2">✓</span>
+                  Email Support
+                </li>
+                <li class="flex items-center">
+                  <span class="text-green-400 mr-2">✓</span>
+                  Course Completion Certificates
+                </li>
+              </ul>
+              <a
+                href="  start.html"
+                class="block text-center bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition duration-300"
+              >
+                Start Learning
+              </a>
+            </div>
+          </div>
+
+          <!-- Pro Plan -->
+          <div
+            class="bg-blue-600 rounded-lg overflow-hidden transform scale-105"
+          >
+            <div class="p-8">
+              <div
+                class="inline-block px-4 py-1 bg-blue-800 rounded-full text-sm font-semibold mb-4"
+              >
+                MOST POPULAR
+              </div>
+              <h3 class="text-2xl font-bold mb-4">Pro Learner</h3>
+              <div class="mb-6">
+                <span class="text-4xl font-bold">$49</span>
+                <span class="text-gray-200">/month</span>
+              </div>
+              <ul class="space-y-4 mb-8">
+                <li class="flex items-center">
+                  <span class="text-white mr-2">✓</span>
+                  Access to All 200+ Courses
+                </li>
+                <li class="flex items-center">
+                  <span class="text-white mr-2">✓</span>
+                  Advanced Project Templates
+                </li>
+                <li class="flex items-center">
+                  <span class="text-white mr-2">✓</span>
+                  1-on-1 Mentoring Sessions
+                </li>
+                <li class="flex items-center">
+                  <span class="text-white mr-2">✓</span>
+                  Priority Support
+                </li>
+                <li class="flex items-center">
+                  <span class="text-white mr-2">✓</span>
+                  Career Guidance Sessions
+                </li>
+                <li class="flex items-center">
+                  <span class="text-white mr-2">✓</span>
+                  Industry Certification Prep
+                </li>
+              </ul>
+              <a
+                href="  signup.html"
+                class="block text-center bg-white text-blue-600 px-6 py-3 rounded-lg hover:bg-gray-100 transition duration-300"
+              >
+                Get Started
+              </a>
+            </div>
+          </div>
+
+          <!-- Enterprise Plan -->
+          <div class="bg-gray-800 rounded-lg overflow-hidden">
+            <div class="p-8">
+              <h3 class="text-2xl font-bold mb-4">Enterprise</h3>
+              <div class="mb-6">
+                <span class="text-4xl font-bold">$99</span>
+                <span class="text-gray-400">/month</span>
+              </div>
+              <ul class="space-y-4 mb-8">
+                <li class="flex items-center">
+                  <span class="text-green-400 mr-2">✓</span>
+                  Everything in Pro Plan
+                </li>
+                <li class="flex items-center">
+                  <span class="text-green-400 mr-2">✓</span>
+                  Custom Learning Paths
+                </li>
+                <li class="flex items-center">
+                  <span class="text-green-400 mr-2">✓</span>
+                  Team Collaboration Tools
+                </li>
+                <li class="flex items-center">
+                  <span class="text-green-400 mr-2">✓</span>
+                  Dedicated Success Manager
+                </li>
+                <li class="flex items-center">
+                  <span class="text-green-400 mr-2">✓</span>
+                  API Access
+                </li>
+                <li class="flex items-center">
+                  <span class="text-green-400 mr-2">✓</span>
+                  Custom Reporting
+                </li>
+              </ul>
+              <a
+                href="  signup.html"
+                class="block text-center bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition duration-300"
+              >
+                Contact Sales
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Features Comparison -->
+        <div class="mt-16">
+          <h2 class="text-2xl font-bold text-center mb-8">
+            Detailed Feature Comparison
+          </h2>
+          <div class="overflow-x-auto">
+            <table class="w-full">
+              <thead>
+                <tr class="border-b border-gray-700">
+                  <th class="py-4 px-6 text-left">Feature</th>
+                  <th class="py-4 px-6 text-center">Basic</th>
+                  <th class="py-4 px-6 text-center">Pro</th>
+                  <th class="py-4 px-6 text-center">Enterprise</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b border-gray-700">
+                  <td class="py-4 px-6">Course Access</td>
+                  <td class="py-4 px-6 text-center">50+ Courses</td>
+                  <td class="py-4 px-6 text-center">200+ Courses</td>
+                  <td class="py-4 px-6 text-center">Unlimited</td>
+                </tr>
+                <tr class="border-b border-gray-700">
+                  <td class="py-4 px-6">Project Templates</td>
+                  <td class="py-4 px-6 text-center">Basic</td>
+                  <td class="py-4 px-6 text-center">Advanced</td>
+                  <td class="py-4 px-6 text-center">Custom</td>
+                </tr>
+                <tr class="border-b border-gray-700">
+                  <td class="py-4 px-6">Support</td>
+                  <td class="py-4 px-6 text-center">Email</td>
+                  <td class="py-4 px-6 text-center">Priority</td>
+                  <td class="py-4 px-6 text-center">Dedicated</td>
+                </tr>
+                <tr class="border-b border-gray-700">
+                  <td class="py-4 px-6">Mentoring</td>
+                  <td class="py-4 px-6 text-center">-</td>
+                  <td class="py-4 px-6 text-center">Monthly</td>
+                  <td class="py-4 px-6 text-center">Weekly</td>
+                </tr>
+                <tr class="border-b border-gray-700">
+                  <td class="py-4 px-6">Career Services</td>
+                  <td class="py-4 px-6 text-center">Basic</td>
+                  <td class="py-4 px-6 text-center">Advanced</td>
+                  <td class="py-4 px-6 text-center">Custom</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="mt-16">
+          <h2 class="text-2xl font-bold text-center mb-8">
+            Frequently Asked Questions
+          </h2>
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-gray-800 p-6 rounded-lg">
+              <h3 class="text-xl font-bold mb-4">Can I switch plans?</h3>
+              <p class="text-gray-400">
+                Yes, you can upgrade or downgrade your plan at any time. Changes
+                will be reflected in your next billing cycle.
+              </p>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg">
+              <h3 class="text-xl font-bold mb-4">Is there a refund policy?</h3>
+              <p class="text-gray-400">
+                We offer a 30-day money-back guarantee for all our plans. If
+                you're not satisfied, we'll provide a full refund.
+              </p>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg">
+              <h3 class="text-xl font-bold mb-4">
+                Do you offer student discounts?
+              </h3>
+              <p class="text-gray-400">
+                Yes, students with valid .edu email addresses can receive a 20%
+                discount on any plan.
+              </p>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg">
+              <h3 class="text-xl font-bold mb-4">
+                What payment methods do you accept?
+              </h3>
+              <p class="text-gray-400">
+                We accept all major credit cards, PayPal, and bank transfers for
+                enterprise plans.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+
+    <!-- Feedback Form -->
+    <section class="py-16 px-4 bg-gray-900">
+      <div class="max-w-md mx-auto">
+        <h2 class="text-2xl font-bold text-center mb-8">Share Your Feedback</h2>
+        <form class="space-y-4">
+          <div>
+            <label for="name" class="block text-sm font-bold mb-1">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Your name"
+              class="w-full px-4 py-2 rounded bg-white text-black focus:ring-2 focus:ring-blue-500 outline-none"
+            />
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-bold mb-1"
+              >Email</label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Your email"
+              class="w-full px-4 py-2 rounded bg-white text-black focus:ring-2 focus:ring-blue-500 outline-none"
+            />
+          </div>
+          <div>
+            <label for="feedback" class="block text-sm font-bold mb-1"
+              >Feedback</label
+            >
+            <textarea
+              id="feedback"
+              name="feedback"
+              rows="4"
+              placeholder="Share your thoughts..."
+              class="w-full px-4 py-2 rounded bg-white text-black focus:ring-2 focus:ring-blue-500 outline-none"
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded transition duration-300"
+          >
+            Submit Feedback
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300 py-8 px-4">
+      <div class="max-w-6xl mx-auto grid md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-white font-bold mb-4">Education Hub</h3>
+          <p>
+            Empowering minds through quality education and practical learning
+            experiences.
+          </p>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-4">Quick Links</h4>
+          <ul class="space-y-2">
+            <li>
+              <a href="  about.html" class="hover:text-white"
+                >About Us</a
+              >
+            </li>
+            <li>
+              <a href="  courses.html" class="hover:text-white"
+                >Courses</a
+              >
+            </li>
+            <li><a href="#" class="hover:text-white">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-4">Contact Us</h4>
+          <ul class="space-y-2">
+            <li>
+              <a href="mailto:no29name7@gmail.com">Mail Me</a>
+            </li>
+            <li><a href="tel:+917070987772">Phone</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-4">Follow Us</h4>
+          <div class="flex space-x-4">
+            <a href="instagram.com/boisanatan/" class="hover:text-white"
+              >Instagram</a
+            >
+            <a
+              href="https://github.com/Ashutosh-JavaDev"
+              class="hover:text-white"
+              >Github</a
+            >
+            <a
+              href="https://www.linkedin.com/in/ashutosh-ayush-128ba8283/"
+              class="hover:text-white"
+              >LinkedIn</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-8 pt-8 border-t border-gray-800">
+        <p>&copy; 2025 Education Hub. All rights reserved.</p>
+      </div>
+    </footer>
+    <script>
+      const menuToggle = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    menuToggle.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+      // Mobile menu button functionality
+document.addEventListener('DOMContentLoaded', () => {
+  const menuButton = document.querySelector('[data-menu-button]');
+  const mobileMenu = document.querySelector('[data-mobile-menu]');
+  const loginButton = document.querySelector('[data-login-button]');
+  const loginMenu = document.querySelector('[data-login-menu]');
+
+  // Toggle mobile menu
+  menuButton?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+    mobileMenu?.classList.toggle('flex');
+  });
+
+  // Toggle login menu
+  loginButton?.addEventListener('click', () => {
+    loginMenu?.classList.toggle('hidden');
+    loginMenu?.classList.toggle('flex');
+  });
+
+  // Close menus when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!menuButton?.contains(e.target) && !mobileMenu?.contains(e.target)) {
+      mobileMenu?.classList.add('hidden');
+      mobileMenu?.classList.remove('flex');
+    }
+    if (!loginButton?.contains(e.target) && !loginMenu?.contains(e.target)) {
+      loginMenu?.classList.add('hidden');
+      loginMenu?.classList.remove('flex');
+    }
+  });
+});
+    </script>
+  </body>
+</html>
+
+
+

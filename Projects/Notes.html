@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoteMaster - Beautiful Note Taking</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .note-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .note-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .note-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
+            background-size: 300% 100%;
+            animation: gradient-shift 3s ease infinite;
+        }
+
+        @keyframes gradient-shift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .add-note-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .add-note-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .add-note-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .add-note-btn:hover::before {
+            left: 100%;
+        }
+
+        .modal-backdrop {
+            backdrop-filter: blur(5px);
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        .modal-content {
+            animation: slideUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .search-container {
+            position: relative;
+        }
+
+        .search-input {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+        }
+
+        .search-input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .note-actions {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+
+        .note-card:hover .note-actions {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 5px 15px rgba(108, 117, 125, 0.4);
+        }
+
+        .empty-state {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .note-count {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .category-tag {
+            background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.5s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .priority-high { border-left: 4px solid #ff6b6b; }
+        .priority-medium { border-left: 4px solid #ffa726; }
+        .priority-low { border-left: 4px solid #66bb6a; }
+
+        .dark-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .dark-scrollbar::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+        }
+
+        .dark-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 3px;
+        }
+
+        .dark-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <div class="container mx-auto p-6 max-w-7xl">
+        <!-- Header -->
+        <header class="glass-effect rounded-2xl p-6 mb-8 shadow-xl">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center">
+                        <i class="fas fa-sticky-note text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-3xl font-bold text-white">NoteMaster</h1>
+                        <p class="text-white/70">Organize your thoughts beautifully</p>
+                    </div>
+                    <span id="noteCount" class="note-count">0 notes</span>
+                </div>
+                
+                <div class="flex items-center gap-4">
+                    <div class="search-container">
+                        <input 
+                            type="text" 
+                            id="searchInput" 
+                            class="search-input px-4 py-2 rounded-xl pl-10 w-64" 
+                            placeholder="Search notes..."
+                        >
+                        <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-white/60"></i>
+                    </div>
+                    
+                    <button id="addNoteBtn" class="add-note-btn text-white px-6 py-3 rounded-xl font-semibold flex items-center gap-2">
+                        <i class="fas fa-plus"></i>
+                        <span>Add Note</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Filter Tabs -->
+        <div class="glass-effect rounded-xl p-4 mb-6 shadow-lg">
+            <div class="flex flex-wrap gap-2">
+                <button class="filter-btn active px-4 py-2 rounded-lg text-white font-medium transition-all" data-filter="all">
+                    <i class="fas fa-list mr-2"></i>All Notes
+                </button>
+                <button class="filter-btn px-4 py-2 rounded-lg text-white/70 font-medium transition-all hover:text-white" data-filter="high">
+                    <i class="fas fa-exclamation-circle mr-2 text-red-400"></i>High Priority
+                </button>
+                <button class="filter-btn px-4 py-2 rounded-lg text-white/70 font-medium transition-all hover:text-white" data-filter="medium">
+                    <i class="fas fa-minus-circle mr-2 text-yellow-400"></i>Medium Priority
+                </button>
+                <button class="filter-btn px-4 py-2 rounded-lg text-white/70 font-medium transition-all hover:text-white" data-filter="low">
+                    <i class="fas fa-check-circle mr-2 text-green-400"></i>Low Priority
+                </button>
+            </div>
+        </div>
+        
+        <!-- Notes Grid -->
+        <main>
+            <div id="notesContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Notes will be dynamically added here -->
+            </div>
+            
+            <!-- Empty State -->
+            <div id="emptyState" class="text-center py-16 empty-state hidden">
+                <div class="w-24 h-24 mx-auto mb-6 bg-white/10 rounded-full flex items-center justify-center">
+                    <i class="fas fa-sticky-note text-4xl text-white/50"></i>
+                </div>
+                <h3 class="text-2xl font-semibold text-white mb-2">No notes yet</h3>
+                <p class="text-white/70 mb-6">Create your first note to get started!</p>
+                <button class="btn-primary text-white px-6 py-3 rounded-xl font-semibold" onclick="document.getElementById('addNoteBtn').click()">
+                    <i class="fas fa-plus mr-2"></i>Create Note
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Enhanced Modal -->
+    <div id="noteModal" class="fixed inset-0 bg-black/50 modal-backdrop flex items-center justify-center p-4 hidden z-50">
+        <div class="modal-content glass-effect rounded-2xl w-full max-w-2xl max-h-[90vh] overflow-hidden shadow-2xl">
+            <div class="p-6 border-b border-white/10">
+                <div class="flex justify-between items-center">
+                    <h2 id="modalTitle" class="text-2xl font-bold text-white">Add New Note</h2>
+                    <button id="closeModal" class="text-white/70 hover:text-white text-2xl transition-colors">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="p-6 dark-scrollbar overflow-y-auto max-h-[calc(90vh-140px)]">
+                <div class="space-y-6">
+                    <div>
+                        <label class="block text-white/80 font-medium mb-2">
+                            <i class="fas fa-heading mr-2"></i>Title
+                        </label>
+                        <input 
+                            type="text" 
+                            id="noteTitle" 
+                            class="w-full p-4 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/50 focus:bg-white/15 focus:border-white/40 focus:outline-none transition-all" 
+                            placeholder="Enter note title..."
+                        >
+                    </div>
+                    
+                    <div>
+                        <label class="block text-white/80 font-medium mb-2">
+                            <i class="fas fa-align-left mr-2"></i>Content
+                        </label>
+                        <textarea 
+                            id="noteContent" 
+                            class="w-full p-4 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/50 focus:bg-white/15 focus:border-white/40 focus:outline-none transition-all resize-none" 
+                            rows="8" 
+                            placeholder="Write your note content here..."
+                        ></textarea>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-white/80 font-medium mb-2">
+                                <i class="fas fa-flag mr-2"></i>Priority
+                            </label>
+                            <select id="notePriority" class="w-full p-4 bg-white/10 border border-white/20 rounded-xl text-white focus:bg-white/15 focus:border-white/40 focus:outline-none transition-all">
+                                <option value="low" class="bg-gray-800">Low Priority</option>
+                                <option value="medium" class="bg-gray-800">Medium Priority</option>
+                                <option value="high" class="bg-gray-800">High Priority</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-white/80 font-medium mb-2">
+                                <i class="fas fa-tag mr-2"></i>Category
+                            </label>
+                            <input 
+                                type="text" 
+                                id="noteCategory" 
+                                class="w-full p-4 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/50 focus:bg-white/15 focus:border-white/40 focus:outline-none transition-all" 
+                                placeholder="e.g., Work, Personal, Ideas..."
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="p-6 border-t border-white/10 flex justify-end gap-3">
+                <button id="cancelBtn" class="btn-secondary text-white px-6 py-3 rounded-xl font-semibold">
+                    <i class="fas fa-times mr-2"></i>Cancel
+                </button>
+                <button id="saveBtn" class="btn-primary text-white px-6 py-3 rounded-xl font-semibold">
+                    <i class="fas fa-save mr-2"></i>Save Note
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const notesContainer = document.getElementById('notesContainer');
+            const addNoteBtn = document.getElementById('addNoteBtn');
+            const noteModal = document.getElementById('noteModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const noteTitle = document.getElementById('noteTitle');
+            const noteContent = document.getElementById('noteContent');
+            const notePriority = document.getElementById('notePriority');
+            const noteCategory = document.getElementById('noteCategory');
+            const cancelBtn = document.getElementById('cancelBtn');
+            const saveBtn = document.getElementById('saveBtn');
+            const closeModal = document.getElementById('closeModal');
+            const searchInput = document.getElementById('searchInput');
+            const noteCount = document.getElementById('noteCount');
+            const emptyState = document.getElementById('emptyState');
+            const filterBtns = document.querySelectorAll('.filter-btn');
+
+            let notes = JSON.parse(localStorage.getItem('notes')) || [];
+            let editIndex = null;
+            let currentFilter = 'all';
+
+            const saveToStorage = () => {
+                localStorage.setItem('notes', JSON.stringify(notes));
+            };
+
+            const updateNoteCount = () => {
+                const count = notes.length;
+                noteCount.textContent = `${count} note${count !== 1 ? 's' : ''}`;
+            };
+
+            const formatDate = (date) => {
+                return new Date(date).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                });
+            };
+
+            const getPriorityIcon = (priority) => {
+                switch(priority) {
+                    case 'high': return '<i class="fas fa-exclamation-circle text-red-400"></i>';
+                    case 'medium': return '<i class="fas fa-minus-circle text-yellow-400"></i>';
+                    case 'low': return '<i class="fas fa-check-circle text-green-400"></i>';
+                    default: return '<i class="fas fa-circle text-gray-400"></i>';
+                }
+            };
+
+            const getPriorityClass = (priority) => {
+                switch(priority) {
+                    case 'high': return 'priority-high';
+                    case 'medium': return 'priority-medium';
+                    case 'low': return 'priority-low';
+                    default: return '';
+                }
+            };
+
+            const truncateText = (text, maxLength = 150) => {
+                return text.length > maxLength ? text.substring(0, maxLength) + '...' : text;
+            };
+
+            const filterNotes = (searchTerm = '', filter = 'all') => {
+                return notes.filter(note => {
+                    const matchesSearch = !searchTerm || 
+                        note.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                        note.content.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                        (note.category && note.category.toLowerCase().includes(searchTerm.toLowerCase()));
+                    
+                    const matchesFilter = filter === 'all' || note.priority === filter;
+                    
+                    return matchesSearch && matchesFilter;
+                });
+            };
+
+            const renderNotes = () => {
+                const searchTerm = searchInput.value;
+                const filteredNotes = filterNotes(searchTerm, currentFilter);
+                
+                notesContainer.innerHTML = '';
+                
+                if (filteredNotes.length === 0) {
+                    emptyState.classList.remove('hidden');
+                    if (searchTerm) {
+                        emptyState.innerHTML = `
+                            <div class="w-24 h-24 mx-auto mb-6 bg-white/10 rounded-full flex items-center justify-center">
+                                <i class="fas fa-search text-4xl text-white/50"></i>
+                            </div>
+                            <h3 class="text-2xl font-semibold text-white mb-2">No notes found</h3>
+                            <p class="text-white/70 mb-6">Try adjusting your search terms or filters</p>
+                        `;
+                    }
+                    return;
+                }
+                
+                emptyState.classList.add('hidden');
+                
+                filteredNotes.forEach((note, originalIndex) => {
+                    const actualIndex = notes.findIndex(n => n.id === note.id);
+                    const noteElement = document.createElement('div');
+                    noteElement.className = `note-card glass-effect rounded-xl p-6 shadow-lg fade-in ${getPriorityClass(note.priority)}`;
+                    
+                    noteElement.innerHTML = `
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="flex items-center gap-2">
+                                ${getPriorityIcon(note.priority)}
+                                <h3 class="text-xl font-semibold text-white truncate">${note.title}</h3>
+                            </div>
+                            ${note.category ? `<span class="category-tag">${note.category}</span>` : ''}
+                        </div>
+                        
+                        <p class="text-white/80 mb-4 leading-relaxed">${truncateText(note.content)}</p>
+                        
+                        <div class="flex justify-between items-center text-sm text-white/60 mb-4">
+                            <span><i class="fas fa-clock mr-1"></i>${formatDate(note.createdAt)}</span>
+                            ${note.updatedAt && note.updatedAt !== note.createdAt ? 
+                                `<span><i class="fas fa-edit mr-1"></i>Updated ${formatDate(note.updatedAt)}</span>` : ''
+                            }
+                        </div>
+                        
+                        <div class="note-actions flex justify-end gap-2">
+                            <button class="editBtn bg-blue-500/20 hover:bg-blue-500/30 text-blue-300 px-3 py-2 rounded-lg transition-all" data-index="${actualIndex}">
+                                <i class="fas fa-edit mr-1"></i>Edit
+                            </button>
+                            <button class="deleteBtn bg-red-500/20 hover:bg-red-500/30 text-red-300 px-3 py-2 rounded-lg transition-all" data-index="${actualIndex}">
+                                <i class="fas fa-trash mr-1"></i>Delete
+                            </button>
+                        </div>
+                    `;
+                    
+                    notesContainer.appendChild(noteElement);
+                });
+
+                // Add event listeners for edit and delete buttons
+                document.querySelectorAll('.editBtn').forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        editIndex = parseInt(e.target.closest('button').dataset.index);
+                        const note = notes[editIndex];
+                        noteTitle.value = note.title;
+                        noteContent.value = note.content;
+                        notePriority.value = note.priority || 'low';
+                        noteCategory.value = note.category || '';
+                        modalTitle.textContent = 'Edit Note';
+                        noteModal.classList.remove('hidden');
+                        noteTitle.focus();
+                    });
+                });
+
+                document.querySelectorAll('.deleteBtn').forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        const index = parseInt(e.target.closest('button').dataset.index);
+                        if (confirm('Are you sure you want to delete this note?')) {
+                            notes.splice(index, 1);
+                            saveToStorage();
+                            renderNotes();
+                            updateNoteCount();
+                        }
+                    });
+                });
+
+                updateNoteCount();
+            };
+
+            // Event Listeners
+            addNoteBtn.addEventListener('click', () => {
+                editIndex = null;
+                noteTitle.value = '';
+                noteContent.value = '';
+                notePriority.value = 'low';
+                noteCategory.value = '';
+                modalTitle.textContent = 'Add New Note';
+                noteModal.classList.remove('hidden');
+                noteTitle.focus();
+            });
+
+            [cancelBtn, closeModal].forEach(btn => {
+                btn.addEventListener('click', () => {
+                    noteModal.classList.add('hidden');
+                });
+            });
+
+            // Close modal on backdrop click
+            noteModal.addEventListener('click', (e) => {
+                if (e.target === noteModal) {
+                    noteModal.classList.add('hidden');
+                }
+            });
+
+            // Close modal on Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !noteModal.classList.contains('hidden')) {
+                    noteModal.classList.add('hidden');
+                }
+            });
+
+            saveBtn.addEventListener('click', () => {
+                const title = noteTitle.value.trim();
+                const content = noteContent.value.trim();
+                const priority = notePriority.value;
+                const category = noteCategory.value.trim();
+
+                if (!title || !content) {
+                    alert('Please fill in both title and content fields.');
+                    return;
+                }
+
+                const now = new Date().toISOString();
+                
+                if (editIndex !== null) {
+                    notes[editIndex] = {
+                        ...notes[editIndex],
+                        title,
+                        content,
+                        priority,
+                        category,
+                        updatedAt: now
+                    };
+                } else {
+                    notes.push({
+                        id: Date.now(),
+                        title,
+                        content,
+                        priority,
+                        category,
+                        createdAt: now,
+                        updatedAt: now
+                    });
+                }
+                
+                saveToStorage();
+                renderNotes();
+                noteModal.classList.add('hidden');
+            });
+
+            // Search functionality
+            searchInput.addEventListener('input', () => {
+                renderNotes();
+            });
+
+            // Filter functionality
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => {
+                        b.classList.remove('active');
+                        b.classList.add('text-white/70');
+                    });
+                    btn.classList.add('active');
+                    btn.classList.remove('text-white/70');
+                    
+                    currentFilter = btn.dataset.filter;
+                    renderNotes();
+                });
+            });
+
+            // Initialize
+            renderNotes();
+        });
+    </script>
+</body>
+</html>

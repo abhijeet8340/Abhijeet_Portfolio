@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Education Hub</title>
+    <link rel="stylesheet" href="   output.css" />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+  </head>
+  <body class="font-sans bg-gray-900 text-white">
+    <!-- Navigation -->
+    <nav class="flex flex-wrap items-center justify-between p-4 z-20 w-full fixed top-0 bg-gray-900 bg-opacity-90">
+      <div class="flex items-center">
+        <a href=" tech.html">
+          <img src="   images/images-removebg-preview.png" alt="Logo" class="w-24 h-auto" />
+        </a>
+      </div>
+      <div class="md:flex space-x-4 font-semibold">
+        <a href="   tech.html" class="hidden md:flex hover:text-blue-400">Home</a>
+        <a href="courses.html" class="hidden md:flex hover:text-blue-400">Courses</a>
+        <a href="features.html" class="hidden md:flex hover:text-blue-400">Features</a>
+        <a href="about.html" class="hidden md:flex hover:text-blue-400">About</a>
+      </div>
+      <div class="md:flex space-x-2">
+        <a href="signup.html" class="hidden md:flex bg-blue-500 px-4 py-2 rounded hover:bg-blue-700 transition duration-300">
+          Sign Up
+        </a>
+        <a href="login.html" class="hidden md:flex bg-blue-500 px-4 py-2 rounded hover:bg-blue-700 transition duration-300">
+          Login
+        </a>
+      </div>
+    </nav>
+
+    <!-- Login Form -->
+    <section class="pt-24 px-4 min-h-screen flex items-center justify-center bg-gray-900">
+      <div class="max-w-md w-full bg-gray-800 rounded-lg shadow-lg p-8">
+        <h1 class="text-3xl font-bold text-center mb-8">Welcome Back</h1>
+        
+        <form class="space-y-6">
+          <div>
+            <label for="email" class="block text-sm font-medium mb-2">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="w-full px-4 py-2 rounded bg-gray-700 border border-gray-600 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              required
+            />
+          </div>
+          
+          <div>
+            <label for="password" class="block text-sm font-medium mb-2">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="w-full px-4 py-2 rounded bg-gray-700 border border-gray-600 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              required
+            />
+          </div>
+
+          <div class="flex items-center justify-between">
+            <div class="flex items-center">
+              <input
+                type="checkbox"
+                id="remember"
+                name="remember"
+                class="rounded bg-gray-700 border-gray-600 text-blue-500 focus:ring-blue-500"
+              />
+              <label for="remember" class="ml-2 text-sm">Remember me</label>
+            </div>
+            <a href="#" class="text-sm text-blue-400 hover:text-blue-300">Forgot password?</a>
+          </div>
+
+          <button
+            type="submit"
+            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded transition duration-300"
+          >
+            Sign In
+          </button>
+        </form>
+
+        <p class="text-center mt-6 text-gray-400">
+          Don't have an account?
+          <a href="signup.html" class="text-blue-400 hover:text-blue-300">Sign up</a>
+        </p>
+      </div>
+    </section>
+  </body>
+</html>

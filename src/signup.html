@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up - Education Hub</title>
+    <link rel="stylesheet" href="   output.css" />
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+  </head>
+  <body class="font-sans bg-gray-900 text-white">
+    <!-- Navigation -->
+    <nav class="flex flex-wrap items-center justify-between p-4 z-20 w-full fixed top-0 bg-gray-900 bg-opacity-90">
+      <div class="flex items-center">
+        <a href=" tech.html">
+          <img src="   images/images-removebg-preview.png" alt="Logo" class="w-24 h-auto" />
+        </a>
+      </div>
+      <div class="md:flex space-x-4 font-semibold">
+        <a href="   tech.html" class="hidden md:flex hover:text-blue-400">Home</a>
+        <a href="courses.html" class="hidden md:flex hover:text-blue-400">Courses</a>
+        <a href="features.html" class="hidden md:flex hover:text-blue-400">Features</a>
+        <a href="about.html" class="hidden md:flex hover:text-blue-400">About</a>
+      </div>
+      <div class="md:flex space-x-2">
+        <a href="signup.html" class="hidden md:flex bg-blue-500 px-4 py-2 rounded hover:bg-blue-700 transition duration-300">
+          Sign Up
+        </a>
+        <a href="login.html" class="hidden md:flex bg-blue-500 px-4 py-2 rounded hover:bg-blue-700 transition duration-300">
+          Login
+        </a>
+      </div>
+    </nav>
+
+    <!-- Sign Up Form -->
+    <section class="pt-24 px-4 min-h-screen flex items-center justify-center bg-gray-900">
+      <div class="max-w-md w-full bg-gray-800 rounded-lg shadow-lg p-8">
+        <h1 class="text-3xl font-bold text-center mb-8">Create Your Account</h1>
+        
+        <form class="space-y-6">
+          <div>
+            <label for="fullName" class="block text-sm font-medium mb-2">Full Name</label>
+            <input
+              type="text"
+              id="fullName"
+              name="fullName"
+              class="w-full px-4 py-2 rounded bg-gray-700 border border-gray-600 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              required
+            />
+          </div>
+          
+          <div>
+            <label for="email" class="block text-sm font-medium mb-2">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="w-full px-4 py-2 rounded bg-gray-700 border border-gray-600 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              required
+            />
+          </div>
+          
+          <div>
+            <label for="password" class="block text-sm font-medium mb-2">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="w-full px-4 py-2 rounded bg-gray-700 border border-gray-600 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              required
+            />
+          </div>
+          
+          <div>
+            <label for="confirmPassword" class="block text-sm font-medium mb-2">Confirm Password</label>
+            <input
+              type="password"
+              id="confirmPassword"
+              name="confirmPassword"
+              class="w-full px-4 py-2 rounded bg-gray-700 border border-gray-600 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              required
+            />
+          </div>
+
+          <div class="flex items-center">
+            <input
+              type="checkbox"
+              id="terms"
+              name="terms"
+              class="rounded bg-gray-700 border-gray-600 text-blue-500 focus:ring-blue-500"
+              required
+            />
+            <label for="terms" class="ml-2 text-sm">
+              I agree to the <a href="#" class="text-blue-400 hover:text-blue-300">Terms of Service</a> and
+              <a href="#" class="text-blue-400 hover:text-blue-300">Privacy Policy</a>
+            </label>
+          </div>
+
+          <button
+            type="submit"
+            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded transition duration-300"
+          >
+            Create Account
+          </button>
+        </form>
+
+        <p class="text-center mt-6 text-gray-400">
+          Already have an account?
+          <a href="login.html" class="text-blue-400 hover:text-blue-300">Log in</a>
+        </p>
+      </div>
+    </section>
+  </body>
+</html>

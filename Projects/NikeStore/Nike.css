@@ -1,0 +1,147 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: gilroy;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+.main{
+    width: 100%;
+    height: 100%;
+    background-color: #d0d4d5;
+    
+}
+.navbar{
+    width: 100%;
+    height: 90px;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2vw;
+    padding: 15px;
+}
+.logo{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-evenly;
+    text-transform: uppercase;
+}
+.logo h4:hover{
+    font-size: 1.5vw;
+}
+.cart_logo{
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-left: 20px;
+    font-size: 1.3vw;
+
+}
+.logo img{
+   width: 90px;
+   height: 40px;
+   /* margin-left: 30px; */
+}
+.cart_logo i{
+    transition: all 1s;
+}
+.cart_logo i:hover{
+    cursor: pointer;
+    transform: rotate(360deg);
+    color: rgb(36, 30, 215);
+    font-size: 1.5vw;
+}
+
+.content{
+    width: 100%;
+    height: calc(100% - 90px);
+    /* background-color: red; */
+    display: flex;
+}
+.left{
+    width: 40%;
+    height: 100%;
+    /* background-color: aqua; */
+    position: relative;
+}
+.left_text{
+    /* width: 250px; */
+    padding: 100px 150px;
+    text-transform: uppercase;
+}
+.left_text p{
+    font-size: 1.1vw;
+    color: #545c5c;
+    font-weight: 600;
+}
+.left_text h1{
+    font-size: 3vw;
+    font-family: gilroy;
+    font-weight: 900;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.left_text button{
+    margin-top: 25px;
+    background-color: rgb(11, 11, 15);
+    font-size: 1vw;
+    color: rgba(220, 214, 203, 0.769);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    border-radius: 20px;
+    border-top-left-radius: 0px;
+    padding: 12px 20px;
+}
+.right{
+    width: 60%;
+    height: 100%;
+    white-space: nowrap; 
+    padding: 130px 100px;
+    overflow-x: auto;
+}
+.right::-webkit-scrollbar{
+    display: none;
+}
+
+.box{
+    width: 300px;
+    height: 400px;
+    background-color: #fff;
+    position: relative;
+    font-size: 1vw;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-right: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 4px 3px 0px;
+    display: inline-block;
+    cursor: pointer;
+}
+ .box img{
+    width: 100%;
+    height: 82%;
+} 
+.box h5{
+    position: absolute;
+    bottom: 5px;
+    right: 20px;  
+    background-color: black; 
+    padding: 5px 10px;
+    color: #fff;
+    font-size: 1vw;
+}
+.box h4{
+    position: absolute;
+    bottom: 35px;
+    right: 10px;  
+    background-color: #545c5c;
+    padding: 10px; 
+    font-size: 1vw;
+}

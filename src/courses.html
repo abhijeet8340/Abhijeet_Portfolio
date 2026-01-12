@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Courses - Education Hub</title>
+    <link rel="stylesheet" href=" output.css" />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+  </head>
+  <body class="font-sans bg-gray-900 text-white">
+    <!-- Navigation -->
+    <nav class="flex flex-wrap items-center justify-between p-4 z-20 w-full fixed top-0 bg-gray-900 bg-opacity-90">
+      <div class="flex items-center">
+        <a href="tech.html">
+          <img src="images/images-removebg-preview.png" alt="Logo" class="w-24 h-auto" />
+        </a>
+      </div>
+      <div class="md:flex space-x-4 font-semibold">
+        <a href="tech.html" class="hidden md:flex hover:text-blue-400">Home</a>
+        <a href="courses.html" class="hidden md:flex text-blue-400">Courses</a>
+        <a href="features.html" class="hidden md:flex hover:text-blue-400">Features</a>
+        <a href="about.html" class="hidden md:flex hover:text-blue-400">About</a>
+      </div>
+      <div class="md:flex space-x-2">
+        <a href="signup.html" class="hidden md:flex bg-blue-500 px-4 py-2 rounded hover:bg-blue-700 transition duration-300">
+          Sign Up
+        </a>
+        <a href="login.html" class="hidden md:flex bg-blue-500 px-4 py-2 rounded hover:bg-blue-700 transition duration-300">
+          Login
+        </a>
+      </div>
+    </nav>
+
+    <!-- Course Catalog -->
+    <section class="pt-24 px-4 bg-gray-900">
+      <div class="max-w-7xl mx-auto">
+        <h1 class="text-4xl font-bold text-center mb-12">Our Course Catalog</h1>
+        
+        <!-- Course Categories -->
+        <div class="grid md:grid-cols-3 gap-8 mb-12">
+          <div class="bg-gray-800 p-6 rounded-lg">
+            <h2 class="text-2xl font-bold mb-4">Programming</h2>
+            <ul class="space-y-2">
+              <li>• Java Development</li>
+              <li>• Python Programming</li>
+              <li>• Web Development</li>
+              <li>• Mobile App Development</li>
+            </ul>
+          </div>
+          <div class="bg-gray-800 p-6 rounded-lg">
+            <h2 class="text-2xl font-bold mb-4">Data Science</h2>
+            <ul class="space-y-2">
+              <li>• Machine Learning</li>
+              <li>• Data Analysis</li>
+              <li>• Big Data</li>
+              <li>• AI Fundamentals</li>
+            </ul>
+          </div>
+          <div class="bg-gray-800 p-6 rounded-lg">
+            <h2 class="text-2xl font-bold mb-4">Business</h2>
+            <ul class="space-y-2">
+              <li>• Digital Marketing</li>
+              <li>• Project Management</li>
+              <li>• Business Analytics</li>
+              <li>• Entrepreneurship</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Featured Courses -->
+        <div class="grid md:grid-cols-2 2xl:grid-cols-3 gap-6">
+          <div class="bg-white rounded-lg overflow-hidden shadow-lg">
+            <img src=" images/lnct.jpg" alt="Course" class="w-full h-48 object-cover" />
+            <div class="p-6 text-gray-900">
+              <h3 class="text-xl font-bold mb-2">Advanced Java Programming</h3>
+              <p class="text-gray-600 mb-4">Master advanced Java concepts including multithreading, collections, and design patterns.</p>
+              <div class="flex justify-between items-center">
+                <span class="text-blue-600 font-bold">$79.99</span>
+                <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300">
+                  Enroll Now
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg overflow-hidden shadow-lg">
+            <img src=" images/lnct.jpg" alt="Course" class="w-full h-48 object-cover" />
+            <div class="p-6 text-gray-900">
+              <h3 class="text-xl font-bold mb-2">Machine Learning Fundamentals</h3>
+              <p class="text-gray-600 mb-4">Learn the basics of machine learning, including algorithms and practical applications.</p>
+              <div class="flex justify-between items-center">
+                <span class="text-blue-600 font-bold">$89.99</span>
+                <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300">
+                  Enroll Now
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg overflow-hidden shadow-lg">
+            <img src=" images/lnct.jpg" alt="Course" class="w-full h-48 object-cover" />
+            <div class="p-6 text-gray-900">
+              <h3 class="text-xl font-bold mb-2">Digital Marketing Mastery</h3>
+              <p class="text-gray-600 mb-4">Master digital marketing strategies, SEO, social media, and content marketing.</p>
+              <div class="flex justify-between items-center">
+                <span class="text-blue-600 font-bold">$69.99</span>
+                <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300">
+                  Enroll Now
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-8 px-4 mt-16">
+      <div class="max-w-6xl mx-auto grid md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-white font-bold mb-4">Education Hub</h3>
+          <p>Empowering minds through quality education and practical learning experiences.</p>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-4">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="about.html" class="hover:text-white">About Us</a></li>
+            <li><a href="courses.html" class="hover:text-white">Courses</a></li>
+            <li><a href="mailto:no29name7@gmail.com" class="hover:text-white">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-4">Contact Us</h4>
+          <ul class="space-y-2">
+            <li><a href="mailto:no29name7@gmail.com">Email:no29name7@gmail.com</a> </li>
+            <li><a href="tel:+917070987772">Phone</a> </li>
+            <li>Address: Ayodhya Baypass near Tanatan Dhabha</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-4">Follow Us</h4>
+          <div class="flex space-x-4">
+            <a href="instagram.com/boisanatan/" class="hover:text-white">Instagram</a>
+            <a href="https://github.com/Ashutosh-JavaDev" class="hover:text-white">Github</a>
+            <a href="https://www.linkedin.com/in/ashutosh-ayush-128ba8283/" class="hover:text-white">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-8 pt-8 border-t border-gray-800">
+        <p>&copy; 2025 Education Hub. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
